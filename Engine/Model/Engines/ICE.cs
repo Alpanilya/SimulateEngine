@@ -31,7 +31,7 @@ namespace Engine.Model.Engines
             var Vhc = EngineRate();
             Te += Vhc * Tdif;
             V += A * Tdif;
-            M += Interpolation.LinearInterpolation(VList, MList, Index, V);
+            M = Interpolation.LinearInterpolation(VList, MList, Index, V);
             A = Acceleration();
             if (Index < MList.Count - 1)
                 Index += V < VList[Index + 1] ? 0 : 1;
